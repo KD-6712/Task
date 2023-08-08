@@ -1,0 +1,3 @@
+export const SHOW_ADDRESS = 'SHOW_ADDRESS'
+export const REMOVE_ADDRESS = 'REMOVE_ADDRESS'
+

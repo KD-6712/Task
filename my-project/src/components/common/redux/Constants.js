@@ -1,0 +1,4 @@
+export const SET_LOADING = 'SET_LOADING'
+export const UNSET_LOADING = 'UNSET_LOADING'
+export const SHOW_SNACKBAR = 'SHOW_SNAKEBAR'
+export const UNSHOW_SNACKBAR = 'UNSHOW_SNAKEBAR'

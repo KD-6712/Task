@@ -1,0 +1,69 @@
+// actionTypes.js
+export const REMOVE_STATE = 'REMOVE_STATE';
+
+Create the action creator function in actions.js:
+// actions.js
+import { REMOVE_STATE } from './actionTypes';
+
+// Action creator function to remove the state from Redux store
+export const removeStateAction = () => {
+  return {
+    type: REMOVE_STATE,
+    // You can pass any additional data you need to the reducer here (if necessary).
+    // For example:
+    // payload: { ... }
+  };
+};
+Implement the reducer in reducer.js:
+// reducer.js
+import { REMOVE_STATE } from './actionTypes';
+
+const initialState = {
+  // Your initial state goes here
+  myReduxState: null,
+};
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case REMOVE_STATE:
+      return {
+        ...state,
+        myReduxState: null, // Set the state to null or whatever initial value is appropriate
+      };
+    // Add other cases to handle other actions if needed
+    default:
+      return state;
+  }
+};
+
+export default reducer;
+Create your component that uses Redux state, e.g., MyComponent.js:
+// MyComponent.js
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeStateAction } from './actions'; // Import the action creator
+
+const MyComponent = () => {
+  const myReduxState = useSelector(state => state.myReduxState);
+  const dispatch = useDispatch();
+
+  // Effect to remove the Redux state on unmount
+  useEffect(() => {
+    return () => {
+      // Dispatch the action to remove the state from Redux store
+      dispatch(removeStateAction());
+    };
+  }, [dispatch]);
+
+  // Rest of your component logic here
+
+  return (
+    // JSX for your component
+    <div>
+      {/* Your component's content */}
+      <p>My Redux State: {myReduxState}</p>
+    </div>
+  );
+};
+
+export default MyComponent;

@@ -1,0 +1,57 @@
+store = {
+    load: {isLoading: false}
+    age: {age:20}
+    address: {address: 'Bhopal'}
+}
+
+rootReducer = {
+    load: loadReducer,
+    age: ageReducer,
+    address: addressReducer
+}
+
+Now we need a new global state cleaner reducer:
+1: Create action file: Actions.js 
+Action.js{
+    removeState(initState, stateToBeReset){
+        return{
+            type: REMOVE_STATE,
+            payload: initState,   eg(address: 'Indore')
+            key: stateToBeReset   eg(address)
+        }
+    }
+}
+
+
+2: Create reducer file for removing state: Reducer.js 
+Reducer.js{
+    reducer(state=?, action)
+    switch(action.type){
+        case REMOVE_STATE:
+        return{
+            How can I get the particular state that is want to remove.  eg(address)
+            And if we are going to remove state from here how it will reflect on the original store.
+        }
+    }
+}
+
+After this we need to add remove Reducer to the store otherwise we can't use dispatch action for it.
+Won't the store create a new state fro this remove reducer?
+
+
+Desired Result:
+current store:
+{
+    load: {isLoading: false}
+    age: {age:20}
+    address: {address: 'Bhopal'}
+}
+
+after removeState
+
+store:
+{
+    load: {isLoading: false}
+    age: {age:20}
+    address: {address: 'Indore'}
+}
