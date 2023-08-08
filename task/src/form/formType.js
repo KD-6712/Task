@@ -1,3 +1,0 @@
-export const FETCH_USERNAME = 'FETCH_USERNAME'
-export const FETCH_EMAIL_ID = 'FETCH_EMAIL_ID'
-export const FETCH_PASSWORD = 'FETCH_PASSWORD'

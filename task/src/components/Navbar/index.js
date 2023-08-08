@@ -13,7 +13,7 @@ const Navbar = () => {
                     <NavLink to="/PostContainer" activeStyle>
                         API-2 Post's Info
                     </NavLink>
-                    <NavLink to="/Formvalidation" activeStyle>
+                    <NavLink to="/FormValidation" activeStyle>
                         Form
                     </NavLink>
                    
