@@ -5,5 +5,5 @@ import thunk from 'redux-thunk'
 
 
 const store = legacy_createStore(rootReducer, applyMiddleware(thunk))
-console.warn("store data", store)
+
 export default store
